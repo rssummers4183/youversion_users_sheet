@@ -34,15 +34,20 @@ view: youversion_user_table_sheets {
     sql: ${TABLE}.month ;;
   }
 
+dimension: year {
+  type: date_year
+  sql: ${TABLE}.month ;;
+  }
+
   measure: total_first_viewers {
     type: number
     sql: ${TABLE}.total_first_viewers ;;
   }
 
-  dimension: year {
-    type: date_year
-    sql: ${TABLE}.year ;;
-  }
+  # dimension: year {
+  #   type: date_year
+  #   sql: ${TABLE}.year ;;
+  # }
 
   set: detail {
     fields: [
