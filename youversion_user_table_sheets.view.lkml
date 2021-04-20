@@ -29,10 +29,10 @@ view: youversion_user_table_sheets {
     sql: ${TABLE}.first_video_viewers ;;
   }
 
-  dimension: month {
-    type: date_month
-    sql: ${TABLE}.month ;;
-  }
+  # dimension: month {
+  #   type: date_month
+  #   sql: ${TABLE}.month ;;
+  # }
 
 dimension: year {
   type: date_year
@@ -49,11 +49,20 @@ dimension: year {
   #   sql: ${TABLE}.year ;;
   # }
 
-  set: detail {
-    fields: [
-      _row,
+  dimension_group: date {
+    label: ""
+    type: time
+    timeframes: [
+      date,
       month,
       year
+    ]
+    sql: cast(${TABLE}.month as timestamp) ;;
+  }
+
+  set: detail {
+    fields: [
+      _row
     ]
   }
 }
