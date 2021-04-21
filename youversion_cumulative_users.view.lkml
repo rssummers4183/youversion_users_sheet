@@ -15,22 +15,22 @@ view: youversion_cumulative_users {
   }
 
   measure: new_plan_users {
-    type: number
+    type: sum
     sql: ${TABLE}.new_plan_users ;;
   }
 
   measure: new_video_users {
-    type: number
+    type: sum
     sql: ${TABLE}.new_video_users ;;
   }
 
   measure: cumulative_video_users {
-    type: number
+    type: sum
     sql: ${TABLE}.cumulative_video_users ;;
   }
 
   measure: cumulative_plan_users {
-    type: number
+    type: sum
     sql: ${TABLE}.cumulative_plan_users ;;
   }
 
@@ -42,8 +42,7 @@ view: youversion_cumulative_users {
         month,
         year
       ]
-      sql: PARSE_DATE('%y/%m/%d', ${TABLE}.date)
-      cast(${TABLE}.date as timestamp) ;;
+      sql:${TABLE}.Month;;
       convert_tz: no
       datatype: date
   }
