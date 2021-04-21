@@ -7,7 +7,7 @@ datagroup: youversion_default_datagroup {
   max_cache_age: "1 hour"
 }
 
-explore: youversion_user_table_sheets {
+explore: youversion_cumulative_users {
   label: "YouVersion Users"
 }
 
