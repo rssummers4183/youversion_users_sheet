@@ -36,7 +36,7 @@ view: youversion_user_table_sheets {
 
 dimension: year {
   type: date_year
-  sql: ${TABLE}.month ;;
+  sql: PARSE_DATE('%d/%m/%Y', ${TABLE}.Month) ;;
   }
 
   measure: total_first_viewers {
@@ -57,8 +57,11 @@ dimension: year {
       month,
       year
     ]
-    sql: cast(${TABLE}.month as timestamp) ;;
+    convert_tz: no
+    datatype: date
+    sql: PARSE_DATE('%d/%m/%Y', ${TABLE}.Month) ;;
   }
+
 
   set: detail {
     fields: [
