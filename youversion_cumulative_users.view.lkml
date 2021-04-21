@@ -42,8 +42,8 @@ view: youversion_cumulative_users {
         month,
         year
       ]
-      sql: PARSE_DATE('%y/%m/%d', ${TABLE}.date) ;;
-      # sql: cast(${TABLE}.date as timestamp) ;;
+      sql: PARSE_DATE('%y/%m/%d', ${TABLE}.date)
+      cast(${TABLE}.date as timestamp) ;;
       convert_tz: no
       datatype: date
   }
