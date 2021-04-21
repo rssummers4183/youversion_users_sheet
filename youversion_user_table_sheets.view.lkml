@@ -34,10 +34,10 @@ view: youversion_user_table_sheets {
   #   sql: ${TABLE}.month ;;
   # }
 
-dimension: year {
-  type: date_year
-  sql: ${TABLE}.month ;;
-  }
+# dimension: year {
+#   type: date_year
+#   sql: ${TABLE}.month ;;
+#   }
 
   measure: total_first_viewers {
     type: number
@@ -57,7 +57,7 @@ dimension: year {
       month,
       year
     ]
-    sql: cast(${TABLE}.month as timestamp) ;;
+    sql: cast(${TABLE}.date as timestamp) ;;
   }
 
   set: detail {
