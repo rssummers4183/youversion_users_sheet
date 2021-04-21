@@ -69,15 +69,24 @@ view: youversion_cumulative_users {
     sql: ${TABLE}.cumulative_plan_users ;;
   }
 
-  # sql: cast(${TABLE}.date as timestamp) ;;
-  # convert_tz: no
-  # datatype: date
-  # sql: PARSE_DATE('%y/%m/%d', ${TABLE}.date) ;;
-
-  dimension: year {
-    type: date_year
-    sql: PARSE_DATE('%y/%m/%d', ${TABLE}.date) ;;
+    dimension_group: date {
+      label: ""
+      type: time
+      timeframes: [
+        date,
+        month,
+        year
+      ]
+      sql: PARSE_DATE('%y/%m/%d', ${TABLE}.date) ;;
+      # sql: cast(${TABLE}.date as timestamp) ;;
+      convert_tz: no
+      datatype: date
   }
+
+  # dimension: year {
+  #   type: date_year
+  #   sql: PARSE_DATE('%y/%m/%d', ${TABLE}.date) ;;
+  # }
 
   set: detail {
     fields: [
