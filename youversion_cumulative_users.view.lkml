@@ -34,6 +34,21 @@ view: youversion_cumulative_users {
     sql: ${TABLE}.cumulative_plan_users ;;
   }
 
+  measure: total_users {
+    type: sum
+    sql: ${TABLE}.new_video_users+${TABLE}.new_plan_users ;;
+  }
+
+  # measure: plan_users_running_total {
+  #   type: running_total
+  #   sql:${TABLE}.cumulative_plan_users  ;;
+  # }
+
+  # measure: video_users_running_total {
+  #   type: running_total
+  #   sql:${TABLE}.cumulative_video_users  ;;
+  # }
+
     dimension_group: date {
       label: ""
       type: time
@@ -42,7 +57,7 @@ view: youversion_cumulative_users {
         month,
         year
       ]
-      sql:${TABLE}.Month;;
+      sql:cast(${TABLE}.Month as Date);;
       convert_tz: no
       datatype: date
   }
