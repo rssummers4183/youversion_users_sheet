@@ -11,6 +11,7 @@ view: youversion_cumulative_users {
 
   dimension: _row {
     type: number
+    primary_key: yes
     sql: ${TABLE}._row ;;
   }
 
