@@ -4,7 +4,7 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 
 datagroup: youversion_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  max_cache_age: "24 hours"
 }
 
 explore: youversion_cumulative_users {
