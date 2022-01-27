@@ -59,8 +59,8 @@ view: youversion_cumulative_users {
         year
       ]
       sql:cast(${TABLE}.Month as Timestamp);;
-      # convert_tz: no
-      # datatype: date
+      convert_tz: no
+      datatype: date
   }
 
   set: detail {

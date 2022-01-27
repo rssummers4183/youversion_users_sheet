@@ -1,6 +1,11 @@
 view: youversion_active_users {
-sql_table_name: `fivetran-bible-project-warehou.google_sheets.youversion_active_users`
-    ;;
+# sql_table_name: `fivetran-bible-project-warehou.google_sheets.youversion_active_users`
+#     ;;
+
+  derived_table: {
+    sql: SELECT * FROM `fivetran-bible-project-warehou.google_sheets.youversion_active_users`
+      ;;
+  }
 
   dimension_group: _fivetran_synced {
     type: time
@@ -31,13 +36,13 @@ sql_table_name: `fivetran-bible-project-warehou.google_sheets.youversion_active_
       month,
       year
     ]
-    sql:cast(${TABLE}.Month as Timestamp);;
-    # convert_tz: no
-    # datatype: date
+    sql:cast(${TABLE}.month as Timestamp);;
+    convert_tz: no
+    datatype: date
   }
 
-  measure: plan_active_users{
-    type: date_fiscal_month_num
+  measure: plan_active_users {
+    type: sum
     sql: ${TABLE}.plans_mau ;;
   }
 
@@ -48,12 +53,17 @@ sql_table_name: `fivetran-bible-project-warehou.google_sheets.youversion_active_
 
   measure: podcast_active_users {
     type: sum
-    sql: ${TABLE}.podcast_mau ;;
+    sql: coalesce(${TABLE}.podcast_mau,0) ;;
   }
 
   measure: video_active_users {
     type: sum
     sql: ${TABLE}.video_mau ;;
+  }
+
+  measure: total_active_users {
+    type: sum
+    sql: coalesce(${TABLE}.plans_or_video_mau,0)+coalesce(${TABLE}.podcast_mau,0) ;;
   }
 
   measure: count {
