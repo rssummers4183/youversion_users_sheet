@@ -37,8 +37,8 @@ view: youversion_active_users {
       year
     ]
     sql:cast(${TABLE}.month as Timestamp);;
-    convert_tz: no
-    datatype: date
+    # convert_tz: no
+    # datatype: date
   }
 
   measure: plan_active_users {
