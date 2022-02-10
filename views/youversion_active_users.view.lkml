@@ -22,6 +22,11 @@ view: youversion_active_users {
     hidden: yes
   }
 
+  dimension_group: current {
+    type: time
+    sql: Current_Timestamp() ;;
+  }
+
   dimension: _row {
     type: number
     primary_key: yes

@@ -15,6 +15,11 @@ view: youversion_cumulative_users {
     sql: ${TABLE}._row ;;
   }
 
+  dimension_group: current {
+    type: time
+    sql: Current_Timestamp() ;;
+  }
+
   measure: new_plan_users {
     type: sum
     sql: ${TABLE}.new_plan_users ;;
