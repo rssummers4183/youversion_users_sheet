@@ -22,12 +22,12 @@ view: youversion_cumulative_users {
 
   measure: new_plan_users {
     type: sum
-    sql: ${TABLE}.new_plan_users ;;
+    sql: ${TABLE}.updated_new_plan_users ;;
   }
 
   measure: new_video_users {
     type: sum
-    sql: ${TABLE}.new_video_users ;;
+    sql: ${TABLE}.updated_new_video_users ;;
   }
 
   measure: cumulative_video_users {
@@ -42,7 +42,7 @@ view: youversion_cumulative_users {
 
   measure: total_users {
     type: sum
-    sql: ${TABLE}.new_video_users+${TABLE}.new_plan_users ;;
+    sql: ${TABLE}.updated_new_video_users+${TABLE}.updated_new_plan_users ;;
   }
 
   # measure: plan_users_running_total {
