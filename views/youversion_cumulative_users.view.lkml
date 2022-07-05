@@ -61,6 +61,7 @@ view: youversion_cumulative_users {
       timeframes: [
         date,
         month,
+        quarter,
         year
       ]
       sql:cast(${TABLE}.Month as Timestamp);;

@@ -39,6 +39,7 @@ view: youversion_active_users {
     timeframes: [
       date,
       month,
+      quarter,
       year
     ]
     sql:cast(${TABLE}.month as Timestamp);;
