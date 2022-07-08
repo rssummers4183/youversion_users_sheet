@@ -62,12 +62,14 @@ view: youversion_cumulative_users {
         date,
         month,
         quarter,
-        year
+        year,
+        day_of_year
       ]
       sql:cast(${TABLE}.Month as Timestamp);;
       # convert_tz: no
       # datatype: date
   }
+
 
   set: detail {
     fields: [
