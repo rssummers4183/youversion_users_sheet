@@ -30,12 +30,12 @@ view: youversion_cumulative_users {
     sql: ${TABLE}.updated_new_video_users ;;
   }
 
-  measure: cumulative_video_users {
+  measure: all_time_cumulative_video_users {
     type: max
     sql: ${TABLE}.cumulative_video_users ;;
   }
 
-  measure: cumulative_plan_users {
+  measure: all_time_cumulative_plan_users {
     type: max
     sql: ${TABLE}.cumulative_plan_users ;;
   }
