@@ -31,12 +31,12 @@ view: youversion_cumulative_users {
   }
 
   measure: cumulative_video_users {
-    type: sum
+    type: max
     sql: ${TABLE}.cumulative_video_users ;;
   }
 
   measure: cumulative_plan_users {
-    type: sum
+    type: max
     sql: ${TABLE}.cumulative_plan_users ;;
   }
 
