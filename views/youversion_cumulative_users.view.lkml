@@ -65,7 +65,7 @@ view: youversion_cumulative_users {
         year,
         day_of_year
       ]
-      sql:cast(${TABLE}.Month as Timestamp);;
+      sql:cast(DATE(CONCAT(Month, "-01")) as Timestamp);;
       # convert_tz: no
       # datatype: date
   }
