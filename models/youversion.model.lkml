@@ -16,4 +16,8 @@ explore: youversion_cumulative_users {
   }
 }
 
+explore: yv_kpi_summary {
+  label: "YouVersion - Strategic Relationships KPI"
+}
+
 persist_with: youversion_default_datagroup
