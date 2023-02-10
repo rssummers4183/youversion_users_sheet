@@ -16,7 +16,7 @@ explore: youversion_cumulative_users {
   }
 }
 
-explore: yv_kpi_summary {
+explore: kpi_monthly {
   label: "YouVersion - Strategic Relationships KPI"
 }
 
