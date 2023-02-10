@@ -18,6 +18,11 @@ explore: youversion_cumulative_users {
 
 explore: kpi_monthly {
   label: "YouVersion - Strategic Relationships KPI"
+
+  view_name: kpi_breakout{
+  label:  "KPI Breakout"
+  }
 }
+
 
 persist_with: youversion_default_datagroup
