@@ -84,7 +84,7 @@ view: kpi_breakout {
   }
 
   measure: total_votd {
-    type: number
+    type: sum
     sql: ${votd} ;;
   }
 
