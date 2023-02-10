@@ -13,11 +13,6 @@ view: kpi_monthly {
 
   dimension_group: date_ {
     type: time
-    timeframes: [
-      month,
-      month_name,
-      year
-    ]
     sql: ${TABLE}.Date_ ;;
   }
 
