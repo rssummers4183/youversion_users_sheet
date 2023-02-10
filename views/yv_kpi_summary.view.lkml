@@ -11,7 +11,7 @@ view: yv_kpi_summary {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Int64 Field 1" in Explore.
 
-  dimension: int64_field_1 {
+  dimension: 2022_Views {
     type: number
     description: "2022 Views"
     sql: ${TABLE}.int64_field_1 ;;
@@ -21,23 +21,18 @@ view: yv_kpi_summary {
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
-  measure: total_int64_field_1 {
+  measure: total_2023_Views {
     type: sum
-    sql: ${int64_field_1} ;;
+    sql: ${TABLE}.int64_field_2 ;;
   }
 
-  measure: average_int64_field_1 {
-    type: average
-    sql: ${int64_field_1} ;;
-  }
-
-  dimension: int64_field_2 {
+  dimension: 2023_Views {
     type: number
     description: "2023 Views"
     sql: ${TABLE}.int64_field_2 ;;
   }
 
-  dimension: string_field_0 {
+  dimension: Month_Name {
     type: string
     description: "Month"
     sql: ${TABLE}.string_field_0 ;;
