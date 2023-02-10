@@ -11,9 +11,16 @@ view: kpi_monthly {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Date " in Explore.
 
-  dimension_group: date_ {
+  dimension_group: view {
     type: time
     sql: ${TABLE}.Date_ ;;
+  }
+
+  dimension_group: current {
+    type: time
+    convert_tz: no
+    datatype: date
+    sql: CURRENT_DATE ;;
   }
 
   dimension: you_version_views_ {
