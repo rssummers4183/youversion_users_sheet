@@ -69,13 +69,23 @@ view: kpi_breakout {
   }
 
   dimension: reading_plans {
-    type: string
+    type: number
     sql: ${TABLE}.Reading_Plans ;;
   }
 
+  measure: total_reading_plans {
+    type: sum
+    sql: ${reading_plans} ;;
+  }
+
   dimension: standalone {
-    type: string
+    type: number
     sql: ${TABLE}.Standalone ;;
+  }
+
+  measure: total_standalone {
+    type: number
+    sql: ${standalone} ;;
   }
 
   dimension: votd {
