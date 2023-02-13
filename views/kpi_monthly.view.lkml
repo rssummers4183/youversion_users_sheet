@@ -23,9 +23,9 @@ view: kpi_monthly {
     sql: CURRENT_DATE ;;
   }
 
-  dimension: you_version_views_ {
+  dimension: total_views_ {
     type: number
-    sql: ${TABLE}.YouVersion_Views_ ;;
+    sql: ${TABLE}.Total_Views_ ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
@@ -34,12 +34,12 @@ view: kpi_monthly {
 
   measure: total_you_version_views_ {
     type: sum
-    sql: ${you_version_views_} ;;
+    sql: ${total_views_} ;;
   }
 
   measure: average_you_version_views_ {
     type: average
-    sql: ${you_version_views_} ;;
+    sql: ${total_views_} ;;
   }
 
   measure: count {
