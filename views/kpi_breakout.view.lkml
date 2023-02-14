@@ -84,7 +84,7 @@ view: kpi_breakout {
   }
 
   measure: total_standalone {
-    type: number
+    type: sum
     sql: ${standalone} ;;
   }
 
