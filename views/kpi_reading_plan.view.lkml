@@ -10,19 +10,18 @@ view: kpi_reading_plan {
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
-  dimension_group: date_ {
+  dimension_group: subscribe {
     type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.Date_ ;;
+  }
+
+  dimension_group: current {
+    type: time
+    convert_tz: no
+    datatype: date
+    sql: CURRENT_DATE ;;
   }
 
   # Here's what a typical dimension looks like in LookML.
