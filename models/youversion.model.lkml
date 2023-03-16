@@ -17,12 +17,15 @@ explore: youversion_cumulative_users {
 }
 
 explore: kpi_monthly {
-  label: "YouVersion - Strategic Relationships KPI"
+  label: "KPI - YouVersion Views Monthly"
 }
 
 explore: kpi_breakout{
-  label:  "YouVersion - Strategic Relationships KPI Breakout"
+  label:  "KPI - YouVersion Views Breakout"
 }
 
+explore: kpi_reading_plan {
+  label: "KPI - YouVersion Reading Plans"
+}
 
 persist_with: youversion_default_datagroup
