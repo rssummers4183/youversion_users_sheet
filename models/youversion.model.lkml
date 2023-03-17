@@ -28,4 +28,8 @@ explore: kpi_reading_plan {
   label: "KPI - YouVersion Reading Plans"
 }
 
+explore: kpi_blog {
+  label: "KPI - Web Blog"
+}
+
 persist_with: youversion_default_datagroup
