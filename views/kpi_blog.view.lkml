@@ -40,18 +40,18 @@ view: kpi_blog {
 
   dimension_group: view {
     type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.View_Date ;;
   }
+
+  dimension_group: current {
+    type: time
+    convert_tz: no
+    datatype: date
+    sql: CURRENT_DATE ;;
+  }
+
 
   measure: count {
     type: count
