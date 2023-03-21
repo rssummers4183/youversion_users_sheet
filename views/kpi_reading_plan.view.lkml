@@ -57,15 +57,45 @@ view: kpi_reading_plan {
     sql: ${TABLE}.Long ;;
   }
 
+  dimension: long_english {
+    type: number
+    sql: ${TABLE}.Long_English ;;
+  }
+
+  dimension: long_global {
+    type: number
+    sql: ${TABLE}.Long_Global ;;
+  }
+
   dimension: mid {
     type: number
     value_format_name: id
     sql: ${TABLE}.Mid ;;
   }
 
+  dimension: mid_english {
+    type: number
+    sql: ${TABLE}.Mid_English ;;
+  }
+
+  dimension: mid_global {
+    type: number
+    sql: ${TABLE}.Mid_Global ;;
+  }
+
   dimension: short {
     type: number
     sql: ${TABLE}.Short ;;
+  }
+
+  dimension: short_english {
+    type: number
+    sql: ${TABLE}.Short_English ;;
+  }
+
+  dimension: short_global {
+    type: number
+    sql: ${TABLE}.Short_Global ;;
   }
 
   dimension: total_subscriptions_ {
