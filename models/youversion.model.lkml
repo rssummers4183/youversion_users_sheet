@@ -32,4 +32,8 @@ explore: kpi_blog {
   label: "KPI - Web Blog"
 }
 
+explore: kpi_spanish {
+  label: "KPI - Spanish"
+}
+
 persist_with: youversion_default_datagroup
