@@ -10,52 +10,55 @@ view: kpi_breakout {
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
-  dimension_group: date_field_0 {
+  dimension_group: date_ {
     type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.date_field_0 ;;
+    sql: ${TABLE}.Date_ ;;
   }
 
+  dimension_group: current {
+    type: time
+    convert_tz: no
+    datatype: date
+    sql:  CURRENT_DATE ;;
+  }
   # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
-  # This dimension will be called "English" in Explore.
+  # This dimension will be called "English Reading Plans" in Explore.
 
-  dimension: english {
+  dimension: english_reading_plans {
     type: number
-    sql: ${TABLE}.English ;;
+    sql: ${TABLE}.English_Reading_Plans ;;
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
-  measure: total_english {
+  measure: total_english_reading_plans {
     type: sum
-    sql: ${english} ;;
+    sql: ${english_reading_plans} ;;
   }
 
-  measure: average_english {
+  measure: average_english_reading_plans {
     type: average
-    sql: ${english} ;;
+    sql: ${english_reading_plans} ;;
   }
 
-  dimension: non_english {
+  dimension: english_standalone {
     type: number
-    sql: ${TABLE}.Non_English ;;
+    sql: ${TABLE}.English_Standalone ;;
   }
 
-  measure: total_non_english {
-    type: sum
-    sql: ${non_english} ;;
+  dimension: non_english_reading_plans_ {
+    type: number
+    sql: ${TABLE}.Non_English_Reading_Plans_ ;;
+  }
+
+  dimension: non_english_standalone_ {
+    type: number
+    sql: ${TABLE}.Non_English_Standalone_ ;;
   }
 
   dimension: non_votd {
@@ -63,19 +66,9 @@ view: kpi_breakout {
     sql: ${TABLE}.Non_VOTD ;;
   }
 
-  measure: total_non_votd {
-    type: sum
-    sql: ${non_votd} ;;
-  }
-
   dimension: reading_plans {
     type: number
     sql: ${TABLE}.Reading_Plans ;;
-  }
-
-  measure: total_reading_plans {
-    type: sum
-    sql: ${reading_plans} ;;
   }
 
   dimension: standalone {
@@ -83,19 +76,9 @@ view: kpi_breakout {
     sql: ${TABLE}.Standalone ;;
   }
 
-  measure: total_standalone {
-    type: sum
-    sql: ${standalone} ;;
-  }
-
   dimension: votd {
     type: number
     sql: ${TABLE}.VOTD ;;
-  }
-
-  measure: total_votd {
-    type: sum
-    sql: ${votd} ;;
   }
 
   measure: count {
