@@ -36,4 +36,8 @@ explore: kpi_spanish {
   label: "KPI - Spanish"
 }
 
+explore: all_data_reading_plan {
+  label: "YouVersion Reading Plans All-data Dashboard"
+}
+
 persist_with: youversion_default_datagroup
