@@ -103,4 +103,9 @@ view: spanish_resources_engaged {
   measure: count {
     type: count
   }
+
+  measure: total {
+    type: sum
+    sql: ${TABLE}.Total_ ;;
+  }
 }
