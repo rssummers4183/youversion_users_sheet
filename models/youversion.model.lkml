@@ -40,4 +40,13 @@ explore: all_data_reading_plan {
   label: "YouVersion Reading Plans All-data Dashboard"
 }
 
+explore: global_resources_engaged {
+  label: "KPI - Global Resources"
+  join: spanish_resources_engaged {
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${global_resources_engaged.date__month} = ${spanish_resources_engaged.date__month} ;;
+  }
+}
+
 persist_with: youversion_default_datagroup
