@@ -73,6 +73,10 @@ view: kpi_spanish {
     sql: ${TABLE}.YouVersion_Views ;;
   }
 
+  dimension: you_version_daily_refresh_views {
+    type:  number
+    sql:  ${TABLE}.YouVersion_Daily_Refresh_Views;;
+  }
   measure: count {
     type: count
     drill_fields: []
