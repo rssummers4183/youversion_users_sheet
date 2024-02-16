@@ -31,10 +31,16 @@ view: kpi_spanish {
 
   dimension_group: month {
     type: time
-    timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.Month ;;
+  }
+
+  dimension_group: current {
+    type: time
+    convert_tz: no
+    datatype: date
+    sql: CURRENT ;;
   }
 
   dimension: new_viewers {
