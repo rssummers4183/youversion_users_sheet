@@ -2,14 +2,14 @@
 view: kpi_spanish {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `fivetran-bible-project-warehou.YouVersion_KPI.KPI_Spanish`
-    ;;
+  sql_table_name: `fivetran-bible-project-warehou.YouVersion_KPI.KPI_Spanish` ;;
+
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
 
-  # Here's what a typical dimension looks like in LookML.
-  # A dimension is a groupable field that can be used to filter query results.
-  # This dimension will be called "Average Views per Viewer" in Explore.
+    # Here's what a typical dimension looks like in LookML.
+    # A dimension is a groupable field that can be used to filter query results.
+    # This dimension will be called "Average Views per Viewer" in Explore.
 
   dimension: average_views_per_viewer {
     type: number
@@ -22,30 +22,19 @@ view: kpi_spanish {
 
   measure: total_average_views_per_viewer {
     type: sum
-    sql: ${average_views_per_viewer} ;;
-  }
-
+    sql: ${average_views_per_viewer} ;;  }
   measure: average_average_views_per_viewer {
     type: average
-    sql: ${average_views_per_viewer} ;;
-  }
-
+    sql: ${average_views_per_viewer} ;;  }
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
   dimension_group: month {
     type: time
+    timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
     datatype: date
     sql: ${TABLE}.Month ;;
-  }
-
-  dimension_group: current {
-    type: time
-    convert_tz: no
-    datatype: date
-    sql:  CURRENT_DATE ;;
-
   }
 
   dimension: new_viewers {
@@ -63,6 +52,11 @@ view: kpi_spanish {
     sql: ${TABLE}.Unique_Viewers_ ;;
   }
 
+  dimension: you_version_daily_refresh_views_ {
+    type: number
+    sql: ${TABLE}.YouVersion_Daily_Refresh_Views_ ;;
+  }
+
   dimension: you_version_reading_plan_subscriptions {
     type: number
     sql: ${TABLE}.YouVersion_Reading_Plan_Subscriptions ;;
@@ -72,18 +66,7 @@ view: kpi_spanish {
     type: number
     sql: ${TABLE}.YouVersion_Views ;;
   }
-
-  dimension: you_version_daily_refresh_views {
-    type:  number
-    sql:  ${TABLE}.YouVersion_Daily_Refresh_Views;;
-  }
-
-  measure: youversion_daily_refresh_views {
-    type: sum
-    sql: ${TABLE}.YouVersion_Daily_Refresh_Views ;;
-  }
   measure: count {
     type: count
-    drill_fields: []
   }
 }
