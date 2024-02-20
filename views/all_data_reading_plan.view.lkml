@@ -32,6 +32,11 @@ view: all_data_reading_plan {
     sql: ${TABLE}.April_2023 ;;
   }
 
+  dimension: april_2024 {
+    type: string
+    sql: ${TABLE}.April_2024 ;;
+  }
+
   dimension: august_2022 {
     type: number
     sql: ${TABLE}.August_2022 ;;
@@ -40,6 +45,11 @@ view: all_data_reading_plan {
   dimension: august_2023 {
     type: number
     sql: ${TABLE}.August_2023 ;;
+  }
+
+  dimension: august_2024 {
+    type: string
+    sql: ${TABLE}.August_2024 ;;
   }
 
   dimension: december_2022 {
@@ -52,6 +62,11 @@ view: all_data_reading_plan {
     sql: ${TABLE}.December_2023 ;;
   }
 
+  dimension: december_2024 {
+    type: string
+    sql: ${TABLE}.December_2024 ;;
+  }
+
   dimension: february_2022 {
     type: number
     sql: ${TABLE}.February_2022 ;;
@@ -60,6 +75,11 @@ view: all_data_reading_plan {
   dimension: february_2023 {
     type: number
     sql: ${TABLE}.February_2023 ;;
+  }
+
+  dimension: february_2024 {
+    type: string
+    sql: ${TABLE}.February_2024 ;;
   }
 
   dimension: january_2022 {
@@ -72,6 +92,11 @@ view: all_data_reading_plan {
     sql: ${TABLE}.January_2023 ;;
   }
 
+  dimension: january_2024 {
+    type: number
+    sql: ${TABLE}.January_2024 ;;
+  }
+
   dimension: july_2022 {
     type: number
     sql: ${TABLE}.July_2022 ;;
@@ -82,6 +107,11 @@ view: all_data_reading_plan {
     sql: ${TABLE}.July_2023 ;;
   }
 
+  dimension: july_2024 {
+    type: string
+    sql: ${TABLE}.July_2024 ;;
+  }
+
   dimension: june_202 {
     type: number
     sql: ${TABLE}.June_202 ;;
@@ -90,6 +120,11 @@ view: all_data_reading_plan {
   dimension: june_2023 {
     type: number
     sql: ${TABLE}.June_2023 ;;
+  }
+
+  dimension: june_2024 {
+    type: string
+    sql: ${TABLE}.June_2024 ;;
   }
 
   dimension: language_ {
@@ -107,6 +142,11 @@ view: all_data_reading_plan {
     sql: ${TABLE}.March_2023 ;;
   }
 
+  dimension: march_2024 {
+    type: string
+    sql: ${TABLE}.March_2024 ;;
+  }
+
   dimension: may_2022 {
     type: number
     sql: ${TABLE}.May_2022 ;;
@@ -115,6 +155,11 @@ view: all_data_reading_plan {
   dimension: may_2023 {
     type: number
     sql: ${TABLE}.May_2023 ;;
+  }
+
+  dimension: may_2024 {
+    type: string
+    sql: ${TABLE}.May_2024 ;;
   }
 
   dimension: november_2022 {
@@ -127,6 +172,11 @@ view: all_data_reading_plan {
     sql: ${TABLE}.November_2023 ;;
   }
 
+  dimension: november_2024 {
+    type: string
+    sql: ${TABLE}.November_2024 ;;
+  }
+
   dimension: october_2022 {
     type: number
     sql: ${TABLE}.October_2022 ;;
@@ -137,6 +187,11 @@ view: all_data_reading_plan {
     sql: ${TABLE}.October_2023 ;;
   }
 
+  dimension: october_2024 {
+    type: string
+    sql: ${TABLE}.October_2024 ;;
+  }
+
   dimension: september_2022 {
     type: number
     sql: ${TABLE}.September_2022 ;;
@@ -145,6 +200,11 @@ view: all_data_reading_plan {
   dimension: september_2023 {
     type: number
     sql: ${TABLE}.September_2023 ;;
+  }
+
+  dimension: september_2024 {
+    type: string
+    sql: ${TABLE}.September_2024 ;;
   }
 
   dimension: tranlated_title_ {
