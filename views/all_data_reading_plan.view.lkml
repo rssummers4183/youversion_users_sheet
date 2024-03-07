@@ -78,7 +78,7 @@ view: all_data_reading_plan {
   }
 
   dimension: february_2024 {
-    type: string
+    type: number
     sql: ${TABLE}.February_2024 ;;
   }
 
