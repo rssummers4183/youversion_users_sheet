@@ -50,10 +50,12 @@ view: mr_youversion {
     type: number
     sql: ${TABLE}.Mid_Global ;;
   }
+
   dimension_group: month {
     type: time
-    sql: ${TABLE}.Month ;;
+    sql: PARSE_DATETIME('%b %Y', ${TABLE}.Month) ;;
   }
+
   dimension_group: current {
     type: time
     convert_tz: no
