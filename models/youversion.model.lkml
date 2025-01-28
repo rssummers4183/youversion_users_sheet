@@ -26,6 +26,11 @@ explore: kpi_breakout{
 
 explore: mr_youversion {
   label: "Monthly Report - YouVersion"
+  join: mr_global {
+    type: left_outer
+    relationship: one_to_one
+    sql_on: ${mr_youversion.month_date} = ${mr_global.month_date} ;;
+  }
 }
 
 explore: kpi_reading_plan {
