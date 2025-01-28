@@ -24,6 +24,10 @@ explore: kpi_breakout{
   label:  "KPI - YouVersion Views Breakout"
 }
 
+explore: mr_youversion {
+  label: "Monthly Report - YouVersion"
+}
+
 explore: kpi_reading_plan {
   label: "KPI - YouVersion Reading Plans"
 }
