@@ -3,9 +3,9 @@ view: combined_rollup_monthly {
     sql:
       SELECT
         DATE_TRUNC(_DATA_DATE, MONTH) AS month_date,
-        SUM(YT_Views) AS total_YT_Views,
+        SUM(views) AS total_YT_Views,
         COUNT(DISTINCT _DATA_DATE) AS unique_days
-      FROM `your_project.your_dataset.combined_rollup`
+      FROM `fivetran-bible-project-warehou.YT_Views.combined_rollup`
       GROUP BY month_date
     ;;
   }
