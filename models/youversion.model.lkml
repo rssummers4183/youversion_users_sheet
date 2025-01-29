@@ -26,17 +26,21 @@ explore: kpi_breakout{
 
 explore: mr_youversion {
   label: "Monthly Report - YouVersion"
+
   join: mr_global {
     type: left_outer
     relationship: one_to_one
     sql_on: ${mr_youversion.month_date} = ${mr_global.month_date} ;;
   }
+
   join: combined_rollup {
     type: left_outer
     relationship: one_to_one
-    sql_on: ${combined_rollup._data_month} = ${mr_youversion.month_month};;
+    sql_on:
+      DATE_TRUNC('month', ${combined_rollup._data_month}) = ${mr_youversion.month_month} ;;  # For PostgreSQL/BigQuery
   }
 }
+
 
 explore: kpi_reading_plan {
   label: "KPI - YouVersion Reading Plans"
