@@ -26,18 +26,15 @@ explore: kpi_breakout{
 
 explore: mr_youversion {
   label: "Monthly Report - YouVersion"
-
   join: mr_global {
     type: left_outer
     relationship: one_to_one
     sql_on: ${mr_youversion.month_date} = ${mr_global.month_date} ;;
   }
-
   join: combined_rollup {
     type: left_outer
     relationship: one_to_one
-    sql_on: FORMAT_DATE('%Y-%m', ${combined_rollup._data_month}) = ${mr_youversion.month_month} ;;
-
+    sql_on: FORMAT_DATE('%b %Y', ${combined_rollup._data_date}) = ${mr_youversion.month_date} ;;
   }
 }
 
