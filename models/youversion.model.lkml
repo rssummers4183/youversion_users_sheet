@@ -33,10 +33,10 @@ explore: mr_youversion {
     sql_on: ${mr_youversion.month_date} = ${mr_global.month_date} ;;
   }
 
-  join: combined_rollup {
+  join: combined_rollup_monthly {
     type: left_outer
-    relationship: many_to_one
-    sql_on: DATE_TRUNC(${combined_rollup._data_date}, MONTH) = DATE(${mr_youversion.month_date}) ;;
+    relationship: one_to_one
+    sql_on: ${mr_youversion.month_date} = ${combined_rollup_monthly.month_date} ;;
   }
 }
 
