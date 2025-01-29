@@ -34,7 +34,7 @@ explore: mr_youversion {
   join: combined_rollup {
     type: left_outer
     relationship: one_to_one
-    sql_on: ${mr_youversion.month_date} = ${combined_rollup._data_month} ;;
+    sql_on: ${mr_youversion.month_date} = ${combined_rollup._data_date} ;;
   }
 }
 
