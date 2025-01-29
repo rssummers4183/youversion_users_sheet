@@ -35,7 +35,7 @@ explore: mr_youversion {
 
   join: combined_rollup {
     type: left_outer
-    relationship: one_to_one
+    relationship: many_to_one
     sql_on: DATE_TRUNC(${combined_rollup._data_date}, MONTH) = DATE(${mr_youversion.month_date}) ;;
   }
 }
