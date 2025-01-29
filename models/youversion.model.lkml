@@ -36,8 +36,8 @@ explore: mr_youversion {
   join: combined_rollup {
     type: left_outer
     relationship: one_to_one
-    sql_on:
-      DATE_TRUNC('month', ${combined_rollup._data_month}) = ${mr_youversion.month_month} ;;  # For PostgreSQL/BigQuery
+    sql_on: FORMAT_DATE('%Y-%m', ${combined_rollup._data_month}) = ${mr_youversion.month_month} ;;
+
   }
 }
 
