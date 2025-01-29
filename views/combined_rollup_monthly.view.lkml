@@ -1,6 +1,6 @@
 view: combined_rollup_monthly {
   derived_table: {
-    sql: |
+    sql:
       SELECT
         DATE_TRUNC(_DATA_DATE, MONTH) AS month_date,
         SUM(measure_1) AS total_measure_1,
