@@ -33,10 +33,10 @@ explore: mr_youversion {
     sql_on: ${mr_youversion.month_date} = ${mr_global.month_date} ;;
   }
 
-  join: combined_rollup_monthly {
+  join: combined_rollup_monthly_aggregated {
     type: left_outer
-    relationship: one_to_many
-    sql_on: ${mr_youversion.month_date} = ${combined_rollup_monthly.month_date} ;;
+    relationship: one_to_one
+    sql_on: DATE(${mr_youversion.month_date}) = ${combined_rollup_monthly_aggregated.month_date} ;;
   }
 }
 
