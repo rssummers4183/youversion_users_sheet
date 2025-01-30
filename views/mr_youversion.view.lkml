@@ -13,9 +13,9 @@ view: mr_youversion {
     type: number
     sql: ${TABLE}.English_Subscriptions ;;
   }
-  dimension: english_votd_ {
+  dimension: global_reading_plans {
     type: number
-    sql: ${TABLE}.English_VOTD_ ;;
+    sql: ${TABLE}.Global_Reading_Plans ;;
   }
   dimension: global_standalone {
     type: number
@@ -63,13 +63,9 @@ view: mr_youversion {
     sql: CURRENT_DATE ;;
   }
 
-  dimension: non_english_reading_plans_ {
+  dimension: non_votd {
     type: number
-    sql: ${TABLE}.Non_English_Reading_Plans_ ;;
-  }
-  dimension: non_english_votd_ {
-    type: number
-    sql: ${TABLE}.Non_English_VOTD_ ;;
+    sql: ${TABLE}.Non_VOTD ;;
   }
   dimension: reading_plans {
     type: number
@@ -106,6 +102,10 @@ view: mr_youversion {
   dimension: standalone {
     type: number
     sql: ${TABLE}.Standalone ;;
+  }
+  dimension: votd {
+    type: number
+    sql: ${TABLE}.VOTD ;;
   }
   measure: count {
     type: count
