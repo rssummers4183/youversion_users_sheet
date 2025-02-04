@@ -98,6 +98,11 @@ view: all_data_reading_plan {
     sql: ${TABLE}.January_2024 ;;
   }
 
+  dimension: january_2025 {
+    type: number
+    sql: ${TABLE}.January_2025 ;;
+  }
+
   dimension: july_2022 {
     type: number
     sql: ${TABLE}.July_2022 ;;
