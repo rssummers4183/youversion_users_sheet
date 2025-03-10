@@ -53,7 +53,7 @@ view: mr_youversion {
 
 dimension_group: month {
   type: time
-  sql: DATETIME(PARSE_DATETIME('%b %Y', CAST(${TABLE}.Month AS STRING))) ;;
+  sql: TIMESTAMP(PARSE_DATETIME('%b %Y', CAST(${TABLE}.Month AS STRING))) ;;
 }
 
 
