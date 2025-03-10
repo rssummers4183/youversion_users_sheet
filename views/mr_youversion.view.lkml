@@ -51,10 +51,11 @@ view: mr_youversion {
     sql: ${TABLE}.Mid_Global ;;
   }
 
-  dimension_group: month {
-    type: time
-    sql: PARSE_DATETIME('%b %Y', ${TABLE}.Month) ;;
-  }
+dimension_group: month {
+  type: time
+  sql: DATETIME(PARSE_DATETIME('%b %Y', CAST(${TABLE}.Month AS STRING))) ;;
+}
+
 
   dimension_group: current {
     type: time
