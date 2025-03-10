@@ -32,7 +32,7 @@ view: mr_global {
 
   dimension_group: month {
     type: time
-    sql: PARSE_DATETIME('%b %Y', ${TABLE}.Month) ;;
+    sql: TIMESTAMP(PARSE_DATETIME('%b %Y', CAST(${TABLE}.Month AS STRING))) ;;
   }
 
   dimension_group: current {
